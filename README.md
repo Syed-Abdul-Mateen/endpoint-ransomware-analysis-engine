@@ -11,7 +11,7 @@ It prints alerts to the console and logs the activity into a JSON file.
 
 ## 📁 Project Structure
 
-```plaintext
+```
 Endpoint Ransomware Behavior Analysis Engine/
 │
 ├── main.py                          # Main entry point to run the monitoring engine
