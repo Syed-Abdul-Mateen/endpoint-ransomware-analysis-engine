@@ -9,8 +9,9 @@ It prints alerts to the console and logs the activity into a JSON file.
 
 ---
 
-##  Project Structure
+## 📁 Project Structure
 
+```plaintext
 Endpoint Ransomware Behavior Analysis Engine/
 │
 ├── main.py                          # Main entry point to run the monitoring engine
@@ -35,7 +36,6 @@ Endpoint Ransomware Behavior Analysis Engine/
 │
 └── tests/                           # Unit tests for components
     └── test_file_watcher.py
-
 
 ---
 
