@@ -12,22 +12,30 @@ It prints alerts to the console and logs the activity into a JSON file.
 ##  Project Structure
 
 Endpoint Ransomware Behavior Analysis Engine/
-├── main.py
-├── monitor/
+│
+├── main.py                          # Main entry point to run the monitoring engine
+├── requirements.txt                 # Project dependencies
+├── activity_log.json                # Logs all detected suspicious activities
+├── README.md                        # Project documentation
+│
+├── monitor/                         # Monitors filesystem changes using watchdog
 │   └── file_watcher.py
-├── engine/
+│
+├── engine/                          # Core logic to classify suspicious behavior
 │   └── behavior_engine.py
-├── reporter/
+│
+├── reporter/                        # Handles logging of alerts
 │   └── alert_logger.py
-├── utils/
+│
+├── utils/                           # Utility functions (e.g., for saving logs)
 │   └── log_utils.py
-├── tests/
-│   └── test_file_watcher.py
-├── sample_watch_dir/
-│   └── (contains files to simulate ransomware activity)
-├── activity_log.json
-├── requirements.txt
-├── README.md
+│
+├── sample_watch_dir/               # Folder being monitored (add/edit files here to test)
+│   └── (test files go here)
+│
+└── tests/                           # Unit tests for components
+    └── test_file_watcher.py
+
 
 ---
 
