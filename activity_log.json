@@ -1,0 +1,27 @@
+[
+    {
+        "event": "File content modified",
+        "path": "sample_watch_dir\\test_suspicious.enc.txt",
+        "timestamp": "Tue Jul  8 02:19:14 2025"
+    },
+    {
+        "event": "File content modified",
+        "path": "sample_watch_dir\\test_suspicious.enc.txt",
+        "timestamp": "Tue Jul  8 02:20:11 2025"
+    },
+    {
+        "event": "File content modified",
+        "path": "sample_watch_dir\\test_suspicious.enc.txt",
+        "timestamp": "Tue Jul  8 02:20:20 2025"
+    },
+    {
+        "event": "File content modified",
+        "path": "sample_watch_dir\\test_suspicious.enc.txt",
+        "timestamp": "Tue Jul  8 02:20:25 2025"
+    },
+    {
+        "event": "File content modified",
+        "path": "sample_watch_dir\\test_file.locked.txt",
+        "timestamp": "Tue Jul  8 02:20:31 2025"
+    }
+]
