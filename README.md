@@ -1,69 +1,67 @@
 # Endpoint Ransomware Behavior Analysis Engine
 
-This project is a simple file monitoring tool designed to detect suspicious ransomware-like behavior on a local folder. It watches for changes such as:
+![Python](https://img.shields.io/badge/python-3.11+-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-Active-brightgreen)
 
-- File content modifications  
-- File renaming to suspicious extensions (e.g., `.locked`, `.enc`, `.crypto`)  
-
-It prints alerts to the console and logs the activity into a JSON file.
-
----
-
-## 📁 Project Structure
-
-```
-Endpoint Ransomware Behavior Analysis Engine/
-│
-├── main.py                          # Main entry point to run the monitoring engine
-├── requirements.txt                 # Project dependencies
-├── activity_log.json                # Logs all detected suspicious activities
-├── README.md                        # Project documentation
-│
-├── monitor/                         # Monitors filesystem changes using watchdog
-│   └── file_watcher.py
-│
-├── engine/                          # Core logic to classify suspicious behavior
-│   └── behavior_engine.py
-│
-├── reporter/                        # Handles logging of alerts
-│   └── alert_logger.py
-│
-├── utils/                           # Utility functions (e.g., for saving logs)
-│   └── log_utils.py
-│
-├── sample_watch_dir/               # Folder being monitored (add/edit files here to test)
-│   └── (test files go here)
-│
-└── tests/                           # Unit tests for components
-    └── test_file_watcher.py
+A modular ransomware behavior monitoring system that watches folders for suspicious file activity like content changes or encrypted renaming.  
+Built using Python with `watchdog`, a clean logging system, and flexible core logic — ideal for security awareness, labs, and research.
 
 ---
 
-## Requirements
+##  Features
 
-- Python 3.11 or above  
-- pip (Python package installer)  
+- Real-time folder monitoring using watchdog  
+- Detects file content modifications  
+- Flags suspicious extensions (like `.locked`, `.enc`, `.crypto`)  
+- Modular core logic for easy rule updates  
+- Alerts shown in terminal and saved to log file  
+- Clean file structure + testable components
 
 ---
 
-## Step-by-Step Setup and Run Instructions
+##  Project Structure
 
-### 1. Install Python (if not already installed)
+Endpoint Ransomware Behavior Analysis Engine/  
+├── main.py                          # Main entry point to run the monitoring engine  
+├── requirements.txt                 # Project dependencies  
+├── activity_log.json                # Logs all detected suspicious activities  
+├── README.md                        # Project documentation  
+│  
+├── monitor/                         # Monitors filesystem changes using watchdog  
+│   └── file_watcher.py  
+│  
+├── engine/                          # Core logic to classify suspicious behavior  
+│   └── behavior_engine.py  
+│  
+├── reporter/                        # Handles logging of alerts  
+│   └── alert_logger.py  
+│  
+├── utils/                           # Utility functions (e.g., for saving logs)  
+│   └── log_utils.py  
+│  
+├── sample_watch_dir/               # Folder being monitored (add/edit files here to test)  
+│   └── (test files go here)  
+│  
+└── tests/                           # Unit tests for components  
+    └── test_file_watcher.py  
 
-Download Python 3.11+ from the official website:  
-https://www.python.org/downloads/release/python-3110/  
+---
 
-Make sure to select the checkbox:  
-**"Add Python to PATH"** during installation.  
+##  Setup & Run Instructions
+
+### 1. Install Python 3.11+
+
+Download from: https://www.python.org/downloads/release/python-3110/  
+ Be sure to enable **"Add Python to PATH"** during installation
 
 ---
 
 ### 2. Clone or Download the Project
 
-If you downloaded a ZIP, extract it.  
-Open Command Prompt and go to the project folder:
+cd into the project directory:
 
-cd "*Replace this with your project folder location*"
+cd "D:\Projects\Endpoint Ransomware Behavior Analysis Engine"
 
 ---
 
@@ -74,75 +72,81 @@ ransomware-env\Scripts\activate
 
 ---
 
-### 4. Install Required Python Packages
+### 4. Install Dependencies
 
-pip install -r requirements.txt  
+pip install -r requirements.txt
 
 ---
 
-### 5. Create or Check the activity_log.json File
+### 5. Create or Verify `activity_log.json`
 
-Make sure the activity_log.json file exists in the project root and is initialized as an empty list:
+Ensure there's a file named `activity_log.json` in the root folder.  
+If not, create it manually with the following content:
 
 []
 
-If it doesn’t exist, create a file with the above content manually.
-
 ---
 
-### 6. Run the Program
+### 6. Start the Monitoring Engine
 
-Use this command:
+Run the main script:
 
 python main.py
 
 You should see output like:
 
 === Endpoint Ransomware Behavior Analysis Engine ===  
-[+] Watching directory: D:\Projects\Endpoint Ransomware Behavior Analysis Engine\sample_watch_dir  
-[+] Monitoring directory: D:\Projects\Endpoint Ransomware Behavior Analysis Engine\sample_watch_dir  
-
-Now the program is actively monitoring the folder.
+[+] Watching directory: sample_watch_dir  
+[+] Monitoring started...  
 
 ---
 
 ### 7. Test It
 
-Do one of the following inside the sample_watch_dir:
+Inside `sample_watch_dir`, try these actions:
 
-- Edit and save any existing file (modifies content)  
-- Rename any file to something like `file.locked` or `file.enc`  
+- Edit and save a file → should trigger content modification alert  
+- Rename a file to something like `file.locked` or `file.enc` → should trigger suspicious extension alert  
 
-These actions will trigger alerts that appear in the console and also get saved into the log file.
+Alerts will show up in the console and get logged in `activity_log.json`
 
 ---
 
-### 8. View Logs
+##  View Logs
 
-All suspicious activities are saved to:
+All suspicious activities are saved in JSON format in:  
 
 activity_log.json  
 
-You can open this file using any text editor or in VS Code to see a history of alerts.
+Open with any text editor or in VS Code for review.
+
+---
+
+##  Running Tests
+
+You can run test cases from the `tests/` folder like this:
+
+python -m unittest discover -s tests
 
 ---
 
 ##  Real-World Use Cases
 
-- Demonstrating how ransomware changes files  
-- Building educational tools for cybersecurity awareness  
-- Testing ransomware detection methods in security labs  
-- Logging suspicious activity for security teams  
+- Simulate ransomware behavior for demos  
+- Use as an educational tool for cybersecurity awareness  
+- Build detection use cases in security labs  
+- Collect log data for ML or research  
 
 ---
 
-##  Disclaimer
+## ⚠ Disclaimer
 
-This project is designed for **educational purposes only**.  
-It does **not offer real-time ransomware protection** and should not be used as a replacement for antivirus or endpoint detection systems.
+This project is intended **for educational and research purposes only**.  
+It does **not offer real-time ransomware protection**, and should not be used as a replacement for antivirus or EDR solutions.
 
 ---
 
 ##  License
 
-This project is open-source and available for learning and modification under the **MIT License**.
+This project is open-source and licensed under the **MIT License**.  
+You're free to use, learn, and modify as needed.
