@@ -61,7 +61,7 @@ Download from: https://www.python.org/downloads/release/python-3110/
 
 cd into the project directory:
 
-cd "D:\Projects\Endpoint Ransomware Behavior Analysis Engine"
+cd "your project folder location"
 
 ---
 
