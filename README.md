@@ -11,18 +11,23 @@ It prints alerts to the console and logs the activity into a JSON file.
 
 ##  Project Structure
 
-Endpoint Ransomware Behavior Analysis Engine/  
-│  
-├── monitor/  
-│   └── file_watcher.py        # Monitors file system changes  
-│  
-├── sample_watch_dir/          # Folder to monitor for suspicious changes  
-│   └── (any test files you add here will be watched)  
-│  
-├── activity_log.json          # Logs all detected suspicious activities  
-├── requirements.txt           # Project dependencies  
-├── main.py                    # Main entry point to run the engine  
-└── README.md                  # Project documentation  
+Endpoint Ransomware Behavior Analysis Engine/
+├── main.py
+├── monitor/
+│   └── file_watcher.py
+├── engine/
+│   └── behavior_engine.py
+├── reporter/
+│   └── alert_logger.py
+├── utils/
+│   └── log_utils.py
+├── tests/
+│   └── test_file_watcher.py
+├── sample_watch_dir/
+│   └── (contains files to simulate ransomware activity)
+├── activity_log.json
+├── requirements.txt
+├── README.md
 
 ---
 
@@ -50,7 +55,7 @@ Make sure to select the checkbox:
 If you downloaded a ZIP, extract it.  
 Open Command Prompt and go to the project folder:
 
-cd "D:\Projects\Endpoint Ransomware Behavior Analysis Engine"
+cd "*Replace this with your project folder location*"
 
 ---
 
