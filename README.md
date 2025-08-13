@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/status-Active-brightgreen)
 
 A modular ransomware behavior monitoring system that watches folders for suspicious file activity like content changes or encrypted renaming.  
-Built using Python with `watchdog`, a clean logging system, and flexible core logic — ideal for security awareness, labs, and research.
+Built using Python with `watchdog`, a clean logging system, and flexible core logic, ideal for security awareness, labs, and research.
 
 ---
 
